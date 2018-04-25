@@ -115,10 +115,15 @@
 	// Agregar las instrucciones JS para resolver el ejercicio aquí.
 	$("#boton").click(function(event) {
 		var campo = $("#camposelector");
-		if ($(campo.val() == ""){
+		if (campo.val() == ""){
 			alert("Debe ingresar un selector jQuery!");
 		} else {
-			console.log(campo.eval());
+			var valor = campo.val();
+			var obj = (eval(valor));
+			obj.fadeIn(50000, function() {
+				$(this).css("background-color", "green");
+
+			})
 		}
 	});
 </script>
